@@ -14,8 +14,10 @@ cap: Dict[str, Any] = dict(platformName='Android', deviceName='Android', automat
 url = 'http://localhost:4723'
 driver = webdriver.Remote(url, options=AppiumOptions().load_capabilities(cap))
 driver.implicitly_wait(10)
-alert = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_button']")
+alert = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='android:id/button2']")
 alert.click()
+alert1 = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_button']")
+alert1.click()
 el = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.ImageButton[@content-desc='Create contact']")
 el.click()
 
@@ -32,3 +34,8 @@ el3.send_keys('1234567890')
 
 el4 = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='com.google.android.contacts:id/toolbar_button']")
 el4.click()
+
+
+
+
+
